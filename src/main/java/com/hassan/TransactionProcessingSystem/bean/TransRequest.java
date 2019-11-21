@@ -1,7 +1,5 @@
 package com.hassan.TransactionProcessingSystem.bean;
 
-import java.sql.Time;
-import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -22,14 +20,54 @@ public class TransRequest {
 	private int AccountTo;
 	@Column(name = "response_code")
 	private String responseCode;
-	@Column(name = "trans_date")
-	private Date transDate;
-	@Column(name = "trans_time")
-	private Time transTime;
 	@Column(name = "trans_dtime")
-	private Timestamp transDtime;
-	@Column(name = "amount_processed")
-	private int amountProcessed;
+	private Date transDtime;
+	@Column(name = "processed_amt")
+	private double processedAmount;
+	@Column(name = "trans_amount")
+	private double transactionAmount;
 	
-
+	public int getTraceAuditNo() {
+		return traceAuditNo;
+	}
+	public void setTraceAuditNo(int traceAuditNo) {
+		this.traceAuditNo = traceAuditNo;
+	}
+	public int getAccountFrom() {
+		return AccountFrom;
+	}
+	public void setAccountFrom(int accountFrom) {
+		AccountFrom = accountFrom;
+	}
+	public int getAccountTo() {
+		return AccountTo;
+	}
+	public void setAccountTo(int accountTo) {
+		AccountTo = accountTo;
+	}
+	public String getResponseCode() {
+		return responseCode;
+	}
+	public void setResponseCode(String responseCode) {
+		this.responseCode = responseCode;
+	}
+	public Date getTransDtime() {
+		return transDtime;
+	}
+	public void setTransDtime(Date transDtime) {
+		this.transDtime = transDtime;
+	}
+	public double getProcessedAmount() {
+		return processedAmount;
+	}
+	public void setProcessedAmount(double processedAmount) {
+		this.processedAmount = processedAmount;
+	}
+	public double getTransactionAmount() {
+		return transactionAmount;
+	}
+	public void setTransactionAmount(double transactionAmount) {
+		this.transactionAmount = transactionAmount;
+	}
+	
 }

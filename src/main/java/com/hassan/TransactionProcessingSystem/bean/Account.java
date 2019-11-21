@@ -25,9 +25,9 @@ public class Account {
 	@Column(name = "is_locked")
 	private char isLocked;
 	@Column(name = "balance")
-	private float balance;
-	@Column(name = "currency_id")
-	private int currencyID;
+	private Double balance;
+	@Column(name = "currency_code")
+	private String currencyCode;
 	
 	public int getAccountID() {
 		return accountID;
@@ -65,17 +65,20 @@ public class Account {
 	public void setIsLocked(char isLocked) {
 		this.isLocked = isLocked;
 	}
-	public float getBalance() {
+	public Double getBalance() {
 		return balance;
 	}
-	public void setBalance(float balance) {
+	public void setBalance(Double balance) {
 		this.balance = balance;
 	}
-	public int getCurrencyID() {
-		return currencyID;
+	public void setCurrencyCode(String currencyCode) {
+		this.currencyCode = currencyCode;
 	}
-	public void setCurrencyID(int currencyID) {
-		this.currencyID = currencyID;
+	public String getCurrencyCode() {
+		return currencyCode;
+	}
+	public void setCurrencyID(String currencyCode) {
+		this.currencyCode = currencyCode;
 	}
 	
 	
