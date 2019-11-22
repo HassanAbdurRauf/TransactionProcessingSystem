@@ -7,25 +7,36 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
 @Table(name ="trans_requests", catalog = "mydb")
 public class TransRequest {
 	
 	@Id
+	@JsonProperty("trace_audit_no")
 	@Column(name = "trace_audit_no")
 	private int traceAuditNo;
+	@JsonProperty("account_from")
 	@Column(name = "account_from")
-	private int AccountFrom;
+	private int accountFrom;
+	@JsonProperty("account_to")
 	@Column(name = "account_to")
-	private int AccountTo;
+	private int accountTo;
+	@JsonProperty("response_code")
 	@Column(name = "response_code")
 	private String responseCode;
+	@JsonProperty("trans_dtime")
 	@Column(name = "trans_dtime")
 	private Date transDtime;
+	@JsonProperty("processed_amt")
 	@Column(name = "processed_amt")
 	private double processedAmount;
+	@JsonProperty("trans_amount")
 	@Column(name = "trans_amount")
 	private double transactionAmount;
+	
+	public TransRequest() {}
 	
 	public int getTraceAuditNo() {
 		return traceAuditNo;
@@ -34,16 +45,16 @@ public class TransRequest {
 		this.traceAuditNo = traceAuditNo;
 	}
 	public int getAccountFrom() {
-		return AccountFrom;
+		return accountFrom;
 	}
 	public void setAccountFrom(int accountFrom) {
-		AccountFrom = accountFrom;
+		this.accountFrom = accountFrom;
 	}
 	public int getAccountTo() {
-		return AccountTo;
+		return accountTo;
 	}
 	public void setAccountTo(int accountTo) {
-		AccountTo = accountTo;
+		this.accountTo = accountTo;
 	}
 	public String getResponseCode() {
 		return responseCode;

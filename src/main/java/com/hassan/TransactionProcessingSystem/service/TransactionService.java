@@ -1,7 +1,6 @@
 package com.hassan.TransactionProcessingSystem.service;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.hibernate.HibernateException;
