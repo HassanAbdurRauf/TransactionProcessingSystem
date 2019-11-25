@@ -7,15 +7,23 @@ import com.hassan.TransactionProcessingSystem.bean.ExchangeResponse;
 
 public class CurrencyExchange {
 
-	public static Double getExchangeRate(String fromCurrency, String toCurrency) throws IOException{
+	public static Double getExchangeRate(String fromCurrency, String toCurrency) throws IOException {
+
+		Double exchangeRate = 1.0;
 
 		ObjectMapper objectMapper = new ObjectMapper();
-		String response = WebClientCommunicator.getRequest("base="+fromCurrency+"&sybmbols="+toCurrency);
 
-		ExchangeResponse exchangeResponse = objectMapper.readValue(response, ExchangeResponse.class);
+		if (!fromCurrency.equals(toCurrency)) {
+			String response = WebClientCommunicator.getRequest(Constants.EXCHANGE_RATE_URL,
+					Constants.EXCHANGE_RATE_URL_BASE_PARAM + fromCurrency + Constants.EXCHANGE_RATE_URL_AMP_SIGN
+							+ Constants.EXCHANGE_RATE_URL_SYMBOLS_PARAM + toCurrency);
 
-		return exchangeResponse.getRates().get(toCurrency);
-		
+			ExchangeResponse exchangeResponse = objectMapper.readValue(response, ExchangeResponse.class);
+			exchangeRate = exchangeResponse.getRates().get(toCurrency);
+		}
+
+		return exchangeRate;
+
 	}
 
 }

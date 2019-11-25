@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public class WebClientCommunicator {
 	
-	public static String getRequest(String params) throws IOException {
-		URL url = new URL("https://api.exchangeratesapi.io/latest?" + params);
+	public static String getRequest(String urlStr, String params) throws IOException {
+		URL url = new URL(urlStr + params);
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 		String json = "";
 		conn.setRequestMethod("GET");

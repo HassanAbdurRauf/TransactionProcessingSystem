@@ -18,7 +18,7 @@ public class Account {
 	private String accountHolderFirstName;
 	@Column(name = "acnt_hldr_lname")
 	private String accountHolderLastName;
-	@Column(name = "acnt_hldr_dob")
+	@Column(name = "acnt_hlder_dob")
 	private Date accountHolderDateofBirth;
 	@Column(name = "is_disabled")
 	private char isDisabled;
