@@ -55,7 +55,7 @@ public class TransactionLoggerService {
 		this.accountTo = accountTo;
 	}
 	
-	@Transactional(isolation = Isolation.READ_COMMITTED)
+	@Transactional(isolation = Isolation.REPEATABLE_READ)
 	public boolean log() throws IOException {
 
 		boolean logged = true;
