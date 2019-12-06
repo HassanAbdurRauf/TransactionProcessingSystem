@@ -1,5 +1,5 @@
 # Transaction Processing System
-Transaction processing system provides api to transfer fund between two accounts.
+Transaction processing system provides api to transfer funds between two accounts.
 Its provides two basic end points.
   - ### /processTransaction (Post)
   - ### /getBalance (Get)
